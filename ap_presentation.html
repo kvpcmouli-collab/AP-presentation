@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Progression Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .presentation-container {
+            width: 100%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            padding: 60px;
+            min-height: 600px;
+            animation: fadeIn 0.5s;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .slide-content {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .slide-content h3 {
+            color: #667eea;
+            margin: 25px 0 15px 0;
+            font-size: 1.5em;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 1.3em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .key-point {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 2px solid #667eea;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #f8f9fa;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .title-slide {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .title-slide h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .title-slide p {
+            font-size: 1.5em;
+            color: #666;
+        }
+
+        .math {
+            font-family: 'Courier New', monospace;
+            background: #f5f5f5;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active title-slide">
+            <h1>Arithmetic Progression</h1>
+            <p>Complete Study Material</p>
+            <p style="margin-top: 40px; font-size: 1.2em; color: #999;">📊 Master AP Concepts & Formulas</p>
+        </div>
+
+        <!-- Slide 2: Definition -->
+        <div class="slide">
+            <h2 class="slide-title">What is Arithmetic Progression?</h2>
+            <div class="slide-content">
+                <h3>Definition</h3>
+                <p>An <strong>Arithmetic Progression (AP)</strong> is a sequence of numbers where the difference between consecutive terms is constant.</p>
+                
+                <div class="formula-box">
+                    Common Difference (d) = Constant
+                </div>
+
+                <div class="example-box">
+                    <strong>Example 1:</strong> 2, 5, 8, 11, 14, ...<br>
+                    Common difference d = 3
+                </div>
+
+                <div class="example-box">
+                    <strong>Example 2:</strong> 20, 15, 10, 5, 0, ...<br>
+                    Common difference d = -5
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: General Form -->
+        <div class="slide">
+            <h2 class="slide-title">General Form of AP</h2>
+            <div class="slide-content">
+                <p>If the first term is <span class="math">a</span> and common difference is <span class="math">d</span>:</p>
+                
+                <div class="formula-box">
+                    a, a+d, a+2d, a+3d, a+4d, ...
+                </div>
+
+                <h3>Types of AP Based on Common Difference</h3>
+                <ul>
+                    <li><strong>d > 0:</strong> Increasing AP (3, 6, 9, 12, ...)</li>
+                    <li><strong>d < 0:</strong> Decreasing AP (10, 7, 4, 1, ...)</li>
+                    <li><strong>d = 0:</strong> Constant AP (5, 5, 5, 5, ...)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4: nth Term Formula -->
+        <div class="slide">
+            <h2 class="slide-title">nth Term of an AP</h2>
+            <div class="slide-content">
+                <div class="formula-box">
+                    aₙ = a + (n-1)d
+                </div>
+
+                <p><strong>Where:</strong></p>
+                <ul>
+                    <li><span class="math">aₙ</span> = nth term</li>
+                    <li><span class="math">a</span> = first term</li>
+                    <li><span class="math">n</span> = number of terms</li>
+                    <li><span class="math">d</span> = common difference</li>
+                </ul>
+
+                <div class="example-box">
+                    <strong>Example:</strong> Find the 10th term of AP: 3, 7, 11, 15, ...<br><br>
+                    <strong>Solution:</strong><br>
+                    a = 3, d = 4, n = 10<br>
+                    a₁₀ = 3 + (10-1)×4 = 3 + 36 = <strong>39</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Sum of n Terms -->
+        <div class="slide">
+            <h2 class="slide-title">Sum of n Terms</h2>
+            <div class="slide-content">
+                <h3>Formula 1: Using First Term and Common Difference</h3>
+                <div class="formula-box">
+                    Sₙ = n/2 [2a + (n-1)d]
+                </div>
+
+                <h3>Formula 2: Using First and Last Term</h3>
+                <div class="formula-box">
+                    Sₙ = n/2 [a + l]
+                </div>
+                <p style="text-align: center; margin-top: 10px;">where l = last term</p>
+
+                <div class="key-point">
+                    💡 <strong>Tip:</strong> Use Formula 2 when the last term is given directly!
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Sum Example -->
+        <div class="slide">
+            <h2 class="slide-title">Sum of n Terms - Example</h2>
+            <div class="slide-content">
+                <div class="example-box">
+                    <strong>Problem:</strong> Find the sum of first 20 terms of AP: 5, 8, 11, 14, ...<br><br>
+                    
+                    <strong>Given:</strong><br>
+                    a = 5, d = 3, n = 20<br><br>
+                    
+                    <strong>Solution:</strong><br>
+                    S₂₀ = 20/2 [2×5 + (20-1)×3]<br>
+                    S₂₀ = 10 [10 + 57]<br>
+                    S₂₀ = 10 × 67<br>
+                    <strong>S₂₀ = 670</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Important Properties -->
+        <div class="slide">
+            <h2 class="slide-title">Important Properties</h2>
+            <div class="slide-content">
+                <h3>Property 1: Three Terms in AP</h3>
+                <p>If a, b, c are in AP, then:</p>
+                <div class="formula-box">
+                    2b = a + c
+                </div>
+
+                <h3>Property 2: Arithmetic Mean</h3>
+                <p>AM between two numbers a and b:</p>
+                <div class="formula-box">
+                    AM = (a + b)/2
+                </div>
+
+                <h3>Property 3: Selection of Terms</h3>
+                <ul>
+                    <li><strong>3 terms:</strong> a-d, a, a+d</li>
+                    <li><strong>5 terms:</strong> a-2d, a-d, a, a+d, a+2d</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8: Formula Summary -->
+        <div class="slide">
+            <h2 class="slide-title">Key Formulas Summary</h2>
+            <div class="slide-content">
+                <table>
+                    <tr>
+                        <th>Formula</th>
+                        <th>Expression</th>
+                    </tr>
+                    <tr>
+                        <td>nth term</td>
+                        <td>aₙ = a + (n-1)d</td>
+                    </tr>
+                    <tr>
+                        <td>Common difference</td>
+                        <td>d = aₙ - aₙ₋₁</td>
+                    </tr>
+                    <tr>
+                        <td>Sum of n terms</td>
+                        <td>Sₙ = n/2[2a + (n-1)d]</td>
+                    </tr>
+                    <tr>
+                        <td>Sum (alternate)</td>
+                        <td>Sₙ = n/2[a + l]</td>
+                    </tr>
+                    <tr>
+                        <td>Arithmetic mean</td>
+                        <td>(a + b)/2</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 9: Special Cases -->
+        <div class="slide">
+            <h2 class="slide-title">Special Cases</h2>
+            <div class="slide-content">
+                <h3>Sum of First n Natural Numbers</h3>
+                <div class="formula-box">
+                    1 + 2 + 3 + ... + n = n(n+1)/2
+                </div>
+
+                <h3>Sum of First n Odd Numbers</h3>
+                <div class="formula-box">
+                    1 + 3 + 5 + ... + (2n-1) = n²
+                </div>
+
+                <h3>Sum of First n Even Numbers</h3>
+                <div class="formula-box">
+                    2 + 4 + 6 + ... + 2n = n(n+1)
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Practice Problem 1 -->
+        <div class="slide">
+            <h2 class="slide-title">Practice Problem 1</h2>
+            <div class="slide-content">
+                <div class="example-box">
+                    <strong>Problem:</strong> Find the 15th term of the AP: 20, 17, 14, 11, ...<br><br>
+                    
+                    <strong>Given:</strong><br>
+                    a = 20, d = -3, n = 15<br><br>
+                    
+                    <strong>Solution:</strong><br>
+                    a₁₅ = a + (n-1)d<br>
+                    a₁₅ = 20 + (15-1)(-3)<br>
+                    a₁₅ = 20 + 14×(-3)<br>
+                    a₁₅ = 20 - 42<br>
+                    <strong>a₁₅ = -22</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Practice Problem 2 -->
+        <div class="slide">
+            <h2 class="slide-title">Practice Problem 2</h2>
+            <div class="slide-content">
+                <div class="example-box">
+                    <strong>Problem:</strong> Find three numbers in AP whose sum is 27 and product is 504.<br><br>
+                    
+                    <strong>Solution:</strong><br>
+                    Let numbers be: a-d, a, a+d<br><br>
+                    
+                    Sum: (a-d) + a + (a+d) = 27<br>
+                    3a = 27 → <strong>a = 9</strong><br><br>
+                    
+                    Product: (a-d)(a)(a+d) = 504<br>
+                    (9-d)(9)(9+d) = 504<br>
+                    9(81-d²) = 504<br>
+                    81-d² = 56 → d² = 25 → <strong>d = ±5</strong><br><br>
+                    
+                    <strong>Numbers: 4, 9, 14</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Exam Tips -->
+        <div class="slide">
+            <h2 class="slide-title">Exam Tips & Tricks</h2>
+            <div class="slide-content">
+                <div class="key-point">
+                    ✅ Always identify a, d, and n clearly before applying formulas
+                </div>
+                <div class="key-point">
+                    ✅ Check if AP is increasing or decreasing (sign of d)
+                </div>
+                <div class="key-point">
+                    ✅ Sum problems often lead to quadratic equations
+                </div>
+                <div class="key-point">
+                    ✅ Verify answers by checking all given conditions
+                </div>
+                <div class="key-point">
+                    ✅ Use Formula 2 for sum when last term is given
+                </div>
+                <div class="key-point">
+                    ✅ Middle term of odd-numbered AP is the arithmetic mean
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Common Mistakes -->
+        <div class="slide">
+            <h2 class="slide-title">Common Mistakes to Avoid</h2>
+            <div class="slide-content">
+                <h3>❌ Don't Confuse:</h3>
+                <ul>
+                    <li>n (number of terms) with the value of nth term</li>
+                    <li>The two different sum formulas - use appropriate one</li>
+                </ul>
+
+                <h3>❌ Remember to:</h3>
+                <ul>
+                    <li>Check both solutions when quadratic equations arise</li>
+                    <li>Pay attention to the sign of common difference</li>
+                    <li>Simplify (n-1) properly in calculations</li>
+                    <li>Not invent attributions or quote exact formulas</li>
+                </ul>
+
+                <div class="key-point">
+                    💡 Practice regularly and verify your solutions!
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Thank You -->
+        <div class="slide title-slide">
+            <h1>Thank You!</h1>
+            <p style="margin-top: 30px;">Keep Practicing & Master AP! 🎯</p>
+            <p style="margin-top: 20px; font-size: 1em; color: #999;">Good luck with your studies!</p>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / <span id="totalSlides">14</span>
+            </span>
+            <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide;
+            
+            prevBtn.disabled = currentSlide === 1;
+            nextBtn.disabled = currentSlide === totalSlides;
+        }
+        
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+        
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
